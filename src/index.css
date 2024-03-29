@@ -51,13 +51,12 @@
 }
 
 .border-card {
-  /* border: 1px solid var(--tg-theme-button-color); */
-  border: 1px solid red;
+  border: 1px solid var(--tg-theme-button-color);
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
 }
 
 .max-w-max {
-  max-width: max-content;
+  max-width: fit-content;
 }

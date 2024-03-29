@@ -20,7 +20,7 @@ export default function MainPage() {
 	return (
 		<div className='container text-center'>
 			<div className='text-color text-2xl'>AdminPanel</div>
-			<div>
+			<div className='max-w-max block-center flex flex-col'>
 				{postData.length !== 0 &&
 					postData.map((post) => {
 						return <PostCard key={post._id} data={post} />;
