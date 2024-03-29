@@ -18,8 +18,8 @@ export default function MainPage() {
 	});
 
 	return (
-		<div>
-			<div className='text-color'>AdminPanel</div>
+		<div className='container text-center'>
+			<div className='text-color text-2xl'>AdminPanel</div>
 			<div>
 				{postData.length !== 0 &&
 					postData.map((post) => {

@@ -12,6 +12,14 @@
   display: flex;
 }
 
+.text-2xl {
+  font-size: 28px;
+}
+
+.text-xl {
+  font-size: 22px;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -22,4 +30,34 @@
 
 .mb-5 {
   margin-bottom: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  margin: 0 auto;
+}
+
+.items-start {
+  align-items: start;
+}
+
+.border-card {
+  /* border: 1px solid var(--tg-theme-button-color); */
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.max-w-max {
+  max-width: max-content;
 }
