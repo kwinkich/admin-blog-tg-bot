@@ -19,7 +19,7 @@ export default function MainPage() {
 
 	return (
 		<div>
-			<div>AdminPanel</div>
+			<div className='text-color'>AdminPanel</div>
 			<div>
 				{postData.length !== 0 &&
 					postData.map((post) => {

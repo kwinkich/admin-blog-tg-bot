@@ -1,12 +1,17 @@
 import { Post } from '../../types/Post';
+import './PostCard.css';
 
 export const PostCard = ({ data }: { data: Post }) => {
 	return (
-		<div>
-			<div>
-				<h1 className=' text-3xl'>{data.title}</h1>
+		<div className='flex flex-col'>
+			<h1 className='text-color mb-5'>{data.title}</h1>
+			<div className='flex items-center'>
 				{data.tags.map((tag) => {
-					return <span key={tag}>{tag}</span>;
+					return (
+						<span key={tag} className='tag-text'>
+							{tag}
+						</span>
+					);
 				})}
 			</div>
 		</div>
