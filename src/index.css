@@ -81,7 +81,7 @@
 .button-del {
   padding: 10px;
   font-size: 50%;
-  background-color: rgb(172, 37, 37);
+  background-color: rgb(255, 47, 47);
   color: var(--tg-theme-button-text-color);
   border: none;
   cursor: pointer;
