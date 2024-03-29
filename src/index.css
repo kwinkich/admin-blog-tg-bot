@@ -77,3 +77,12 @@
   border: none;
   cursor: pointer;
 }
+
+.button-del {
+  padding: 10px;
+  font-size: 50%;
+  background-color: rgb(172, 37, 37);
+  color: var(--tg-theme-button-text-color);
+  border: none;
+  cursor: pointer;
+}

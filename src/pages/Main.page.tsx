@@ -12,15 +12,19 @@ export default function MainPage() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const dataPost = await axios.get(
-				'https://blog-server-ruvh.onrender.com/api/posts'
-			);
-			const dataNews = await axios.get(
-				'https://blog-server-ruvh.onrender.com/api/news'
-			);
+			try {
+				const dataPost = await axios.get(
+					'https://blog-server-ruvh.onrender.com/api/posts'
+				);
+				const dataNews = await axios.get(
+					'https://blog-server-ruvh.onrender.com/api/news'
+				);
 
-			setPostData(dataPost.data);
-			setNewsData(dataNews.data);
+				setPostData(dataPost.data);
+				setNewsData(dataNews.data);
+			} catch (err) {
+				console.error(err);
+			}
 		};
 
 		fetchData();
@@ -29,31 +33,33 @@ export default function MainPage() {
 	return (
 		<div className='container text-center'>
 			<div className='text-color text-2xl mb-10'>AdminPanel</div>
-			<div className='max-w-max block-center flex flex-col mb-20'>
-				<h2 className='text-color text-xl mb-5'>Posts</h2>
-				{postData.length !== 0 ? (
-					postData.map((post) => {
-						return <PostCard key={post._id} data={post} />;
-					})
-				) : (
-					<>
-						<h2 className='text-color text-xl mb-10'>No post yet</h2>
-						<Button>Create Post</Button>
-					</>
-				)}
-			</div>
-			<div className='max-w-max block-center flex flex-col'>
-				<h2 className='text-color text-xl mb-5'>News</h2>
-				{newsData.length !== 0 ? (
-					newsData.map((news) => {
-						return <NewsCard key={news._id} data={news} />;
-					})
-				) : (
-					<>
-						<h2 className='text-color text-xl mb-10'>No news yet</h2>
-						<Button>Create News</Button>
-					</>
-				)}
+			<div className='block-center flex flex-col max-w-max'>
+				<div className='mb-20'>
+					<h2 className='text-color text-xl mb-5'>Posts</h2>
+					{postData.length !== 0 ? (
+						postData.map((post) => {
+							return <PostCard key={post._id} data={post} />;
+						})
+					) : (
+						<>
+							<h2 className='text-color text-xl mb-10'>No post yet</h2>
+							<Button>Create Post</Button>
+						</>
+					)}
+				</div>
+				<div>
+					<h2 className='text-color text-xl mb-5'>News</h2>
+					{newsData.length !== 0 ? (
+						newsData.map((news) => {
+							return <NewsCard key={news._id} data={news} />;
+						})
+					) : (
+						<>
+							<h2 className='text-color text-xl mb-10'>No news yet</h2>
+							<Button>Create News</Button>
+						</>
+					)}
+				</div>
 			</div>
 		</div>
 	);
