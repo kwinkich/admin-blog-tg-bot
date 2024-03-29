@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.mb-20 {
+  margin-bottom: 40px;
+}
+
 .mb-10 {
   margin-bottom: 20px;
 }
