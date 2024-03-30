@@ -39,7 +39,11 @@ export default function MainPage() {
 					<h2 className='text-color text-xl mb-5'>Posts</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
-							return <PostCard key={post._id} data={post} />;
+							return (
+								<div className='block-center max-w-max'>
+									<PostCard key={post._id} data={post} />
+								</div>
+							);
 						})
 					) : (
 						<>
