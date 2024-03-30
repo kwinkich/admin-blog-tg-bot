@@ -63,7 +63,9 @@ export default function MainPage() {
 					) : (
 						<>
 							<h2 className='text-color text-xl mb-10'>No news yet</h2>
-							<Button>Create News</Button>
+							<Link to={`/create-news`}>
+								<Button>Create News</Button>
+							</Link>
 						</>
 					)}
 				</div>
