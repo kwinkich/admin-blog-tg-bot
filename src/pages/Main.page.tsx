@@ -48,7 +48,7 @@ export default function MainPage() {
 					) : (
 						<>
 							<h2 className='text-color text-xl mb-10'>No post yet</h2>
-							<Link to={`/create-post`}>
+							<Link to={`/post/create`}>
 								<Button>Create Post</Button>
 							</Link>
 						</>
@@ -63,7 +63,7 @@ export default function MainPage() {
 					) : (
 						<>
 							<h2 className='text-color text-xl mb-10'>No news yet</h2>
-							<Link to={`/create-news`}>
+							<Link to={`/news/create`}>
 								<Button>Create News</Button>
 							</Link>
 						</>

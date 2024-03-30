@@ -9,8 +9,8 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path='/' element={<MainPage />} />
-					<Route path='/create-post' element={<CreatePostPage />} />
-					<Route path='/create-news' element={<CreateNewsPage />} />
+					<Route path='/post/create' element={<CreatePostPage />} />
+					<Route path='/news/create' element={<CreateNewsPage />} />
 				</Routes>
 			</BrowserRouter>
 		</>

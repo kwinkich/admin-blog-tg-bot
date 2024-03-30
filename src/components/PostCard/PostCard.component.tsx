@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { Post } from '../../types/Post';
 import { ButtonDel } from '../ButtonDel/ButtonDel';
+import { ButtonEdit } from '../ButtonEdit/ButtonEdit';
 
 export const PostCard = ({ data }: { data: Post }) => {
 	const handleClickDelPost = async () => {
@@ -26,7 +28,12 @@ export const PostCard = ({ data }: { data: Post }) => {
 					);
 				})}
 			</div>
-			<ButtonDel click={handleClickDelPost} />
+			<div className='flex items-center'>
+				<ButtonDel click={handleClickDelPost} />
+				<Link to={`/posts/edit/${data._id}`}>
+					<ButtonEdit />
+				</Link>
+			</div>
 		</div>
 	);
 };
