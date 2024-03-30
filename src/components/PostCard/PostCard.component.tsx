@@ -28,7 +28,7 @@ export const PostCard = ({ data }: { data: Post }) => {
 					);
 				})}
 			</div>
-			<div className='flex items-center'>
+			<div className='flex gap-7 items-center'>
 				<ButtonDel click={handleClickDelPost} />
 				<Link to={`/posts/edit/${data._id}`}>
 					<ButtonEdit />
