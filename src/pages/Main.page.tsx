@@ -58,7 +58,11 @@ export default function MainPage() {
 					<h2 className='text-color text-xl mb-5'>News</h2>
 					{newsData.length !== 0 ? (
 						newsData.map((news) => {
-							return <NewsCard key={news._id} data={news} />;
+							return (
+								<div className='block-center max-w-max'>
+									<NewsCard key={news._id} data={news} />
+								</div>
+							);
 						})
 					) : (
 						<>
