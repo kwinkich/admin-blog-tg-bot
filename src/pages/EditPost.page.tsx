@@ -32,7 +32,7 @@ export default function EditPostPage() {
 
 	const handleEditPost = async () => {
 		try {
-			const editedPost = await axios.post(
+			const editedPost = await axios.put(
 				`https://blog-server-ruvh.onrender.com/api/posts/update/${id}`,
 				{
 					title: postTitle || postData?.title,
