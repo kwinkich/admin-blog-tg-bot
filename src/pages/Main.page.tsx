@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { NewsCard } from '../components/NewsCard/NewsCard.component';
 import { PostCard } from '../components/PostCard/PostCard.component';
@@ -43,7 +44,9 @@ export default function MainPage() {
 					) : (
 						<>
 							<h2 className='text-color text-xl mb-10'>No post yet</h2>
-							<Button>Create Post</Button>
+							<Link to={`/create-post`}>
+								<Button>Create Post</Button>
+							</Link>
 						</>
 					)}
 				</div>
