@@ -32,7 +32,7 @@ export default function CreatePostPage() {
 	return (
 		<div className='container text-center'>
 			<div className='max-w-max block-center'>
-				<h1 className='text-2xl mb-20'>Create Post</h1>
+				<h1 className='text-2xl mb-20 text-color'>Create Post</h1>
 				<div className='flex flex-col items-start max-w-max block-center'>
 					<div className='mb-10 flex items-center gap-7'>
 						<Label>Post Title</Label>

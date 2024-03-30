@@ -106,3 +106,8 @@
   font-size: 18px;
   color: var(--tg-theme-text-color);
 }
+
+.tag-text {
+  color: var(--tg-theme-text-color);
+  margin-right: 4px;
+}
