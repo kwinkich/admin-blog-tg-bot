@@ -30,7 +30,7 @@ export default function EditPostPage() {
 		fetchData();
 	});
 
-	const handleCreatePost = async () => {
+	const handleEditPost = async () => {
 		try {
 			const editedPost = await axios.post(
 				`https://blog-server-ruvh.onrender.com/api/posts/update/${id}`,
@@ -79,7 +79,7 @@ export default function EditPostPage() {
 							placeholder='Tags'
 						/>
 					</div>
-					<Button click={handleCreatePost}>Create Post</Button>
+					<Button click={handleEditPost}>Edit Post</Button>
 				</div>
 			</div>
 		</div>

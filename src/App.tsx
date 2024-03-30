@@ -12,7 +12,7 @@ function App() {
 					<Route path='/' element={<MainPage />} />
 					<Route path='/post/create' element={<CreatePostPage />} />
 					<Route path='/news/create' element={<CreateNewsPage />} />
-					<Route path='/post/edit/:id' element={<EditPostPage />} />
+					<Route path='/posts/edit/:id' element={<EditPostPage />} />
 				</Routes>
 			</BrowserRouter>
 		</>
