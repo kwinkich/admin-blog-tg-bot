@@ -8,6 +8,10 @@
   color: var(--tg-theme-text-color)
 }
 
+.bg-color {
+  background: var(--tg-theme-bg-color);
+}
+
 .flex {
   display: flex;
 }
