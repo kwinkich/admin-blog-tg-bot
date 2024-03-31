@@ -33,7 +33,7 @@ export default function MainPage() {
 
 	return (
 		<div className='container text-center'>
-			<div className='text-color text-2xl mb-10'>AdminPanel</div>
+			<div className='text-color text-2xl mb-10 mt-15'>AdminPanel</div>
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
 					<h2 className='text-color text-xl mb-5'>Posts</h2>

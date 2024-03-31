@@ -33,8 +33,8 @@ export default function CreatePostPage() {
 		<div className='container text-center'>
 			<div className='max-w-max block-center'>
 				<h1 className='text-2xl mb-20 text-color'>Create Post</h1>
-				<div className='flex flex-col items-start max-w-max block-center'>
-					<div className='mb-10 flex items-center gap-7'>
+				<div className='flex flex-col items-center max-w-max block-center'>
+					<div className='mb-10 flex flex-col items-start gap-7'>
 						<Label>Post Title</Label>
 						<Input
 							onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -43,7 +43,7 @@ export default function CreatePostPage() {
 							placeholder='Title'
 						/>
 					</div>
-					<div className='mb-10 flex items-center gap-7'>
+					<div className='mb-10 flex flex-col items-start gap-7'>
 						<Label>Post Description</Label>
 						<Input
 							onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -52,7 +52,7 @@ export default function CreatePostPage() {
 							placeholder='Description'
 						/>
 					</div>
-					<div className='mb-10 flex items-center gap-7'>
+					<div className='mb-10 flex flex-col items-start gap-7'>
 						<Label>Post Tags</Label>
 						<Input
 							onChange={(e: ChangeEvent<HTMLInputElement>) =>
