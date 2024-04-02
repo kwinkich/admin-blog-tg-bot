@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { NewsCard } from '../components/NewsCard/NewsCard.component';
 import { PostCard } from '../components/PostCard/PostCard.component';
+import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
 
 export default function MainPage() {
+	const { initData } = useTelegram();
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
@@ -36,7 +38,9 @@ export default function MainPage() {
 			<div className='text-color text-2xl mb-10 mt-15'>AdminPanel</div>
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
-					<h2 className='text-color text-xl mb-5'>Posts</h2>
+					<h2 className='text-color text-xl mb-5'>
+						Posts by {initData?.user?.username}
+					</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
 							return (
