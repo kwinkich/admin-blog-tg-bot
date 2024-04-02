@@ -9,7 +9,7 @@ import { News } from '../types/News';
 import { Post } from '../types/Post';
 
 export default function MainPage() {
-	const { tg, initDataUnsafe } = useTelegram();
+	const { tg } = useTelegram();
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
