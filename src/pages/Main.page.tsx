@@ -37,7 +37,7 @@ export default function MainPage() {
 		<div className='container text-center'>
 			<div className='text-color text-2xl mb-10 mt-15'>AdminPanel</div>
 			<div className='block-center flex flex-col max-w-max'>
-				<div className='mb-20'>
+				<div className='mb-20' onClick={() => tg.showAlert('Privet')}>
 					<h2 className='text-color text-xl mb-5'>
 						Posts by {tg.initDataUnsage?.user?.username}
 					</h2>
