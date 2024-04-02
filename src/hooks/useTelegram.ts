@@ -7,6 +7,6 @@ export default function useTelegram() {
 		tg,
 		user: tg.initDataUnsafe?.user,
 		queryId: tg.initDataUnsage?.query_id,
-		initData: tg.initData,
+		initDataUnsafe: tg.initDataUnsafe,
 	};
 }
