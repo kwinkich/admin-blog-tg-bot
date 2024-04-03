@@ -7,12 +7,11 @@ import { PostCard } from '../components/PostCard/PostCard.component';
 import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
+import { UserData } from '../types/UserData.ts';
 
 export default function MainPage() {
 	const { tg } = useTelegram();
-	const [initData, setInitData] = useState<{
-		user: { username: string };
-	} | null>(null);
+	const [userData, setUserData] = useState<UserData>();
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
@@ -21,14 +20,14 @@ export default function MainPage() {
 
 		const fetchInitData = async () => {
 			try {
-				const initData = await axios.post(
+				const response = await axios.post(
 					'https://blog-server-oerc.onrender.com/api/bot',
 					{
 						initData: tg.initDataUnsafe,
 						tg,
 					}
 				);
-				setInitData(initData.data);
+				setUserData(response.data);
 			} catch (err) {
 				console.error(err);
 			}
@@ -60,7 +59,7 @@ export default function MainPage() {
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
 					<h2 className='text-color text-xl mb-5'>
-						Posts by {initData?.user.username}
+						Posts {userData?.user?.username}
 					</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
