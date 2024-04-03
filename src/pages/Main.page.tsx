@@ -23,7 +23,7 @@ export default function MainPage() {
 				const response = await axios.post(
 					'https://blog-server-oerc.onrender.com/api/bot',
 					{
-						initData: tg.initDataUnsafe,
+						initData: tg.initData,
 						tg,
 					}
 				);
