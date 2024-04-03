@@ -22,7 +22,7 @@ export default function MainPage() {
 		tg.ready();
 
 		axios
-			.post('https://blog-server-oerc.onrender.com/api/verify', {
+			.post('https://blog-server-oerc.onrender.com/api/user/verify', {
 				initData: tg.initData,
 				tg,
 			})
