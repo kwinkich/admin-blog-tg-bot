@@ -52,7 +52,7 @@ export default function MainPage() {
 
 		fetchInitData();
 		fetchData();
-	});
+	}, [tg]);
 
 	return (
 		<div className='container text-center'>
