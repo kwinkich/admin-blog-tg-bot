@@ -22,7 +22,7 @@ export default function MainPage() {
 		tg.ready();
 
 		axios
-			.post('https://blog-server-ruvh.onrender.com/api/verify', {
+			.post('http://localhost:5050/api/verify', {
 				initData: tg.initData,
 				tg,
 			})
