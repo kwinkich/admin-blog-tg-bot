@@ -23,7 +23,7 @@ export default function MainPage() {
 
     const fetchUserTelegram = async () => {
       try{
-        const user = await axios.post('https://blog-server-oerc.onrender.com/api/user/verify', {
+        const user = await axios.get('https://blog-server-oerc.onrender.com/api/bot', {
           initData: tg.initData,
           tg,
         })
