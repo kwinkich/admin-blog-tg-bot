@@ -8,34 +8,13 @@ import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
 
-type User = {
-	user: { username: string };
-};
-
 export default function MainPage() {
 	const { tg } = useTelegram();
-	const [userData, setUserData] = useState<User | null>(null);
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
 	useEffect(() => {
 		tg.ready();
-
-		const fetchUserTelegram = async () => {
-			try {
-				const user = await axios.post(
-					'https://blog-server-oerc.onrender.com/api/bot',
-					{
-						initData: tg.initData,
-						tg,
-					}
-				);
-				setUserData(user.data);
-			} catch (err) {
-				console.error(err);
-			}
-		};
-
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
@@ -52,7 +31,6 @@ export default function MainPage() {
 			}
 		};
 
-		fetchUserTelegram();
 		fetchData();
 	});
 
@@ -62,7 +40,7 @@ export default function MainPage() {
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
 					<h2 className='text-color text-xl mb-5'>
-						Posts by {userData?.user?.username}
+						Posts by {tg.initData?.user?.username}
 					</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
