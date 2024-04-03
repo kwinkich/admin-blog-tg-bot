@@ -40,7 +40,7 @@ export default function MainPage() {
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
 					<h2 className='text-color text-xl mb-5'>
-						Posts by {tg.initData?.user?.username}
+						Posts by {tg.initDataUnsafe.user.username}
 					</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
