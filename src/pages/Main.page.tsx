@@ -21,13 +21,17 @@ export default function MainPage() {
 	useEffect(() => {
 		tg.ready();
 
-		axios
-			.post('https://blog-server-oerc.onrender.com/api/user/verify', {
-				initData: tg.initData,
-				tg,
-			})
-			.then((res) => setUserData(res.data as User))
-			.catch(() => console.error('kek'));
+    const fetchUserTelegram = async () => {
+      try{
+        const user = await axios.post('https://blog-server-oerc.onrender.com/api/user/verify', {
+          initData: tg.initData,
+          tg,
+        })
+        setUserData(user.data);
+      } catch(err){
+        console.error(err);
+      }
+    }
 
 		const fetchData = async () => {
 			try {
@@ -45,6 +49,7 @@ export default function MainPage() {
 			}
 		};
 
+    fetchUserTelegram();
 		fetchData();
 	});
 
