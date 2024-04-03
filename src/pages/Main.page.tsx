@@ -7,13 +7,11 @@ import { PostCard } from '../components/PostCard/PostCard.component';
 import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
-// import { UserData } from '../types/UserData';
+import { UserData } from '../types/UserData';
 
 export default function MainPage() {
 	const { tg } = useTelegram();
-	const [userData, setUserData] = useState<{
-		user: { username: string };
-	} | null>(null);
+	const [userData, setUserData] = useState<UserData>();
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
