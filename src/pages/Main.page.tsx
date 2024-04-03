@@ -7,7 +7,7 @@ import { PostCard } from '../components/PostCard/PostCard.component';
 import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
-import { UserData } from '../types/UserData.ts';
+import { UserData } from '../types/UserData';
 
 export default function MainPage() {
 	const { tg } = useTelegram();
