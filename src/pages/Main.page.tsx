@@ -8,12 +8,27 @@ import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
 
+type User = {
+	user: { username: string };
+};
+
 export default function MainPage() {
 	const { tg } = useTelegram();
+	const [userData, setUserData] = useState<User | null>(null);
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
 	useEffect(() => {
+		tg.ready();
+
+		axios
+			.post('https://blog-server-ruvh.onrender.com/api/verify', {
+				initData: tg.initData,
+				tg,
+			})
+			.then((res) => setUserData(res.data as User))
+			.catch(() => console.error('kek'));
+
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
@@ -39,7 +54,7 @@ export default function MainPage() {
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
 					<h2 className='text-color text-xl mb-5'>
-						Posts by {tg.initDataUnsafe.user.username}
+						Posts by {userData?.user?.username}
 					</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
