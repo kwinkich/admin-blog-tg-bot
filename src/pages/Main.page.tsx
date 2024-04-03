@@ -22,7 +22,7 @@ export default function MainPage() {
 		tg.ready();
 
 		axios
-			.post('http://localhost:5050/api/verify', {
+			.post('https://blog-server-oerc.onrender.com/api/verify', {
 				initData: tg.initData,
 				tg,
 			})
@@ -32,10 +32,10 @@ export default function MainPage() {
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
-					'https://blog-server-ruvh.onrender.com/api/posts'
+					'https://blog-server-oerc.onrender.com/api/posts'
 				);
 				const dataNews = await axios.get(
-					'https://blog-server-ruvh.onrender.com/api/news'
+					'https://blog-server-oerc.onrender.com/api/news'
 				);
 
 				setPostData(dataPost.data);

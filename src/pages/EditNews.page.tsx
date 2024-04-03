@@ -18,7 +18,7 @@ export default function EditNewsPage() {
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
-					`https://blog-server-ruvh.onrender.com/api/news/${id}`
+					`https://blog-server-oerc.onrender.com/api/news/${id}`
 				);
 				setNewsData(dataPost.data);
 			} catch (err) {
@@ -32,7 +32,7 @@ export default function EditNewsPage() {
 	const handleEditNews = async () => {
 		try {
 			const editedNews = await axios.put(
-				`https://blog-server-ruvh.onrender.com/api/news/update/${id}`,
+				`https://blog-server-oerc.onrender.com/api/news/update/${id}`,
 				{
 					title: newsTitle || newsData?.title,
 					description: newsDescription || newsData?.description,

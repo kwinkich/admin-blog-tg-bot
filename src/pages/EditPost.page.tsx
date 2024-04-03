@@ -19,7 +19,7 @@ export default function EditPostPage() {
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
-					`https://blog-server-ruvh.onrender.com/api/posts/${id}`
+					`https://blog-server-oerc.onrender.com/api/posts/${id}`
 				);
 				setPostData(dataPost.data);
 			} catch (err) {
@@ -33,7 +33,7 @@ export default function EditPostPage() {
 	const handleEditPost = async () => {
 		try {
 			const editedPost = await axios.put(
-				`https://blog-server-ruvh.onrender.com/api/posts/update/${id}`,
+				`https://blog-server-oerc.onrender.com/api/posts/update/${id}`,
 				{
 					title: postTitle || postData?.title,
 					description: postDescription || postData?.description,
