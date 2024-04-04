@@ -11,7 +11,7 @@ import MainPage from './pages/Main.page';
 
 function App() {
 	const { tg } = useTelegram();
-	const { isVerify, userData, login } = useAuth();
+	const { isVerify, login } = useAuth();
 
 	useEffect(() => {
 		tg.ready();
@@ -32,7 +32,7 @@ function App() {
 		};
 
 		fetchInitData();
-	}, [tg, userData, login]);
+	}, []);
 
 	return (
 		<>
