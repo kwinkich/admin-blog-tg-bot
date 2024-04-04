@@ -4,35 +4,20 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { NewsCard } from '../components/NewsCard/NewsCard.component';
 import { PostCard } from '../components/PostCard/PostCard.component';
+import { useAuth } from '../contexts/VerifyContext.tsx';
 import useTelegram from '../hooks/useTelegram.ts';
 import { News } from '../types/News';
 import { Post } from '../types/Post';
 import { UserData } from '../types/UserData';
 
 export default function MainPage() {
+	const { userData } = useAuth();
 	const { tg } = useTelegram();
-	const [userData, setUserData] = useState<UserData>();
+	const [userDataState, setUserDataState] = useState<UserData | null>();
 	const [postData, setPostData] = useState<Post[]>([]);
 	const [newsData, setNewsData] = useState<News[]>([]);
 
 	useEffect(() => {
-		tg.ready();
-
-		const fetchInitData = async () => {
-			try {
-				const response = await axios.post(
-					'https://blog-server-oerc.onrender.com/api/bot',
-					{
-						initData: tg.initDataUnsafe,
-						tg,
-					}
-				);
-				setUserData(response.data);
-			} catch (err) {
-				console.error(err);
-			}
-		};
-
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
@@ -49,9 +34,10 @@ export default function MainPage() {
 			}
 		};
 
-		fetchInitData();
+		setUserDataState(userData);
+
 		fetchData();
-	}, [tg]);
+	}, [tg, userData]);
 
 	return (
 		<div className='container text-center'>
@@ -59,7 +45,7 @@ export default function MainPage() {
 			<div className='block-center flex flex-col max-w-max'>
 				<div className='mb-20'>
 					<h2 className='text-color text-xl mb-5'>
-						Posts {userData?.user?.username}
+						Posts {userDataState?.user?.username}
 					</h2>
 					{postData.length !== 0 ? (
 						postData.map((post) => {
