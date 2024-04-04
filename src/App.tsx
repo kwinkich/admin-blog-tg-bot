@@ -27,7 +27,7 @@ function App() {
 				);
 				login(response.data);
 			} catch (err) {
-				console.error(err);
+				tg.showAlert('Oops....', () => err);
 			}
 		};
 

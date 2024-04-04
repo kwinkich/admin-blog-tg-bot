@@ -36,5 +36,4 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 	);
 };
 
-// Хук для использования контекста в компонентах
 export const useAuth = () => useContext(AuthContext);
