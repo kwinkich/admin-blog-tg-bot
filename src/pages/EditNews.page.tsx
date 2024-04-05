@@ -36,8 +36,10 @@ export default function EditNewsPage() {
 			const editedNews = await axios.put(
 				`https://blog-server-3xmv.onrender.com/api/news/update/${id}`,
 				{
-					title: newsTitle || newsData?.title,
-					description: newsDescription || newsData?.description,
+					newsData: {
+						title: newsTitle || newsData?.title,
+						description: newsDescription || newsData?.description,
+					},
 					initData: tg.initDataUnsafe,
 				}
 			);

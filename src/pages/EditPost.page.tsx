@@ -37,9 +37,11 @@ export default function EditPostPage() {
 			const editedPost = await axios.put(
 				`https://blog-server-3xmv.onrender.com/api/posts/update/${id}`,
 				{
-					title: postTitle || postData?.title,
-					description: postDescription || postData?.description,
-					tags: postTags || postData?.tags,
+					postData: {
+						title: postTitle || postData?.title,
+						description: postDescription || postData?.description,
+						tags: postTags || postData?.tags,
+					},
 					initData: tg.initDataUnsafe,
 				}
 			);

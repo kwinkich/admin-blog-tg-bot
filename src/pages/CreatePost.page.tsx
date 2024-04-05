@@ -19,9 +19,11 @@ export default function CreatePostPage() {
 			const createdPost = await axios.post(
 				'https://blog-server-3xmv.onrender.com/api/posts/create',
 				{
-					title: postTitle,
-					description: postDescription,
-					tags: postTags,
+					postData: {
+						title: postTitle,
+						description: postDescription,
+						tags: postTags,
+					},
 					initData: tg.initDataUnsafe,
 				}
 			);

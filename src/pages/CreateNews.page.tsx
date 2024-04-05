@@ -18,8 +18,10 @@ export default function CreateNewsPage() {
 			const createdNews = await axios.post(
 				'https://blog-server-3xmv.onrender.com/api/news/create',
 				{
-					title: newsTitle,
-					description: newsDescription,
+					newsData: {
+						title: newsTitle,
+						description: newsDescription,
+					},
 					initData: tg.initDataUnsafe,
 				}
 			);
