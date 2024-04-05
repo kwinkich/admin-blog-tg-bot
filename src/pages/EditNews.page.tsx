@@ -4,9 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { Input } from '../components/Input/Input.component';
 import { Label } from '../components/Label/Label.component';
+import useTelegram from '../hooks/useTelegram';
 import { News } from '../types/News';
 
 export default function EditNewsPage() {
+	const { tg } = useTelegram();
 	const [newsData, setNewsData] = useState<News>();
 	const [newsTitle, setTitle] = useState<string>('');
 	const [newsDescription, setDescription] = useState<string>('');
@@ -36,6 +38,7 @@ export default function EditNewsPage() {
 				{
 					title: newsTitle || newsData?.title,
 					description: newsDescription || newsData?.description,
+					initData: tg.initDataUnsafe,
 				}
 			);
 			console.log(editedNews);

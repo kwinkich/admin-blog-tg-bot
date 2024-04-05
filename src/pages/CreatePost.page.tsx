@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { Input } from '../components/Input/Input.component';
 import { Label } from '../components/Label/Label.component';
+import useTelegram from '../hooks/useTelegram';
 
 export default function CreatePostPage() {
+	const { tg } = useTelegram();
 	const [postTitle, setTitle] = useState<string>('');
 	const [postDescription, setDescription] = useState<string>('');
 	const [postTags, setTags] = useState<string>('');
@@ -20,6 +22,7 @@ export default function CreatePostPage() {
 					title: postTitle,
 					description: postDescription,
 					tags: postTags,
+					initData: tg.initDataUnsafe,
 				}
 			);
 			console.log(createdPost);

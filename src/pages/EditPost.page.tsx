@@ -4,9 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { Input } from '../components/Input/Input.component';
 import { Label } from '../components/Label/Label.component';
+import useTelegram from '../hooks/useTelegram';
 import { Post } from '../types/Post';
 
 export default function EditPostPage() {
+	const { tg } = useTelegram();
 	const [postData, setPostData] = useState<Post>();
 	const [postTitle, setTitle] = useState<string>('');
 	const [postDescription, setDescription] = useState<string>('');
@@ -38,6 +40,7 @@ export default function EditPostPage() {
 					title: postTitle || postData?.title,
 					description: postDescription || postData?.description,
 					tags: postTags || postData?.tags,
+					initData: tg.initDataUnsafe,
 				}
 			);
 			console.log(editedPost);

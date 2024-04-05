@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button/Button.component';
 import { Input } from '../components/Input/Input.component';
 import { Label } from '../components/Label/Label.component';
+import useTelegram from '../hooks/useTelegram';
 
 export default function CreateNewsPage() {
+	const { tg } = useTelegram();
 	const [newsTitle, setTitle] = useState<string>('');
 	const [newsDescription, setDescription] = useState<string>('');
 
@@ -18,6 +20,7 @@ export default function CreateNewsPage() {
 				{
 					title: newsTitle,
 					description: newsDescription,
+					initData: tg.initDataUnsafe,
 				}
 			);
 			console.log(createdNews);

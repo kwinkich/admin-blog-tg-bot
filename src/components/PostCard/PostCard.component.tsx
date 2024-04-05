@@ -1,14 +1,19 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import useTelegram from '../../hooks/useTelegram';
 import { Post } from '../../types/Post';
 import { ButtonDel } from '../ButtonDel/ButtonDel';
 import { ButtonEdit } from '../ButtonEdit/ButtonEdit';
 
 export const PostCard = ({ data }: { data: Post }) => {
+	const { tg } = useTelegram();
 	const handleClickDelPost = async () => {
 		try {
-			const response = await axios.delete(
-				`https://blog-server-3xmv.onrender.com/api/posts/delete/${data._id}`
+			const response = await axios.post(
+				`https://blog-server-3xmv.onrender.com/api/posts/delete/${data._id}`,
+				{
+					initData: tg.initDataUnsafe,
+				}
 			);
 			console.log(response.data);
 		} catch (err) {
