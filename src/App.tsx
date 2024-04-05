@@ -19,7 +19,7 @@ function App() {
 		const fetchInitData = async () => {
 			try {
 				const response = await axios.post(
-					'http://localhost:5050/api/bot/verify',
+					'https://blog-server-oerc.onrender.com/api/bot/verify',
 					{
 						initData: tg.initDataUnsafe,
 						tg,
