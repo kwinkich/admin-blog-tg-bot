@@ -8,7 +8,7 @@ export const PostCard = ({ data }: { data: Post }) => {
 	const handleClickDelPost = async () => {
 		try {
 			const response = await axios.delete(
-				`https://blog-server-oerc.onrender.com/api/posts/delete/${data._id}`
+				`https://blog-server-3xmv.onrender.com/api/posts/delete/${data._id}`
 			);
 			console.log(response.data);
 		} catch (err) {

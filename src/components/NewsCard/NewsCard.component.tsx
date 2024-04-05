@@ -8,7 +8,7 @@ export const NewsCard = ({ data }: { data: News }) => {
 	const handleClickDelNews = async () => {
 		try {
 			const response = await axios.delete(
-				`https://blog-server-oerc.onrender.com/api/news/delete/${data._id}`
+				`https://blog-server-3xmv.onrender.com/api/news/delete/${data._id}`
 			);
 			console.log(response.data);
 		} catch (err) {
