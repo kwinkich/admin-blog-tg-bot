@@ -15,7 +15,7 @@ export default function CreatePostPage() {
 	const handleCreatePost = async () => {
 		try {
 			const createdPost = await axios.post(
-				'https://blog-server-oerc.onrender.com/api/posts/create',
+				'https://blog-server-3xmv.onrender.com/api/posts/create',
 				{
 					title: postTitle,
 					description: postDescription,

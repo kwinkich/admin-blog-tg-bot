@@ -21,10 +21,10 @@ export default function MainPage() {
 		const fetchData = async () => {
 			try {
 				const dataPost = await axios.get(
-					'https://blog-server-oerc.onrender.com/api/posts'
+					'https://blog-server-3xmv.onrender.com/api/posts'
 				);
 				const dataNews = await axios.get(
-					'https://blog-server-oerc.onrender.com/api/news'
+					'https://blog-server-3xmv.onrender.com/api/news'
 				);
 
 				setPostData(dataPost.data);

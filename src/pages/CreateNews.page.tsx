@@ -14,7 +14,7 @@ export default function CreateNewsPage() {
 	const handleCreateNews = async () => {
 		try {
 			const createdNews = await axios.post(
-				'https://blog-server-oerc.onrender.com/api/news/create',
+				'https://blog-server-3xmv.onrender.com/api/news/create',
 				{
 					title: newsTitle,
 					description: newsDescription,
